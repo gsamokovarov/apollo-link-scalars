@@ -1,0 +1,22 @@
+import { fragmentReducer } from "../fragment-reducer";
+import { expectedFragmentsReduced as efr1, operationQuery as op1 } from "./common1.fixtures";
+import { expectedFragmentsReduced as efr2, operationQuery as op2 } from "./common2.fixtures";
+describe("fragmentReducer(documentNode): operationNode", () => {
+    it("returns null with no definitions", () => {
+        expect(fragmentReducer(null)).toBeNull();
+        expect(fragmentReducer({})).toBeNull();
+        expect(fragmentReducer({ definitions: [] })).toBeNull();
+    });
+    it("returns null with no OperationDefinitionNode in the definitions", () => {
+        expect(fragmentReducer({
+            definitions: [{ whatever: null }]
+        })).toBeNull();
+    });
+    it("example1", () => {
+        expect(fragmentReducer(op1)).toEqual(efr1);
+    });
+    it("example2", () => {
+        expect(fragmentReducer(op2)).toEqual(efr2);
+    });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZnJhZ21lbnQtcmVkdWNlci5zcGVjLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vc3JjL2xpYi9fX3Rlc3RzX18vZnJhZ21lbnQtcmVkdWNlci5zcGVjLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBLE9BQU8sRUFBRSxlQUFlLEVBQUUsTUFBTSxxQkFBcUIsQ0FBQztBQUN0RCxPQUFPLEVBQ0wsd0JBQXdCLElBQUksSUFBSSxFQUNoQyxjQUFjLElBQUksR0FBRyxFQUN0QixNQUFNLG9CQUFvQixDQUFDO0FBQzVCLE9BQU8sRUFDTCx3QkFBd0IsSUFBSSxJQUFJLEVBQ2hDLGNBQWMsSUFBSSxHQUFHLEVBQ3RCLE1BQU0sb0JBQW9CLENBQUM7QUFFNUIsUUFBUSxDQUFDLDhDQUE4QyxFQUFFLEdBQUcsRUFBRTtJQUM1RCxFQUFFLENBQUMsa0NBQWtDLEVBQUUsR0FBRyxFQUFFO1FBQzFDLE1BQU0sQ0FBQyxlQUFlLENBQUUsSUFBZ0MsQ0FBQyxDQUFDLENBQUMsUUFBUSxFQUFFLENBQUM7UUFDdEUsTUFBTSxDQUFDLGVBQWUsQ0FBRSxFQUE4QixDQUFDLENBQUMsQ0FBQyxRQUFRLEVBQUUsQ0FBQztRQUNwRSxNQUFNLENBQ0osZUFBZSxDQUFFLEVBQUUsV0FBVyxFQUFFLEVBQUUsRUFBOEIsQ0FBQyxDQUNsRSxDQUFDLFFBQVEsRUFBRSxDQUFDO0lBQ2YsQ0FBQyxDQUFDLENBQUM7SUFDSCxFQUFFLENBQUMsaUVBQWlFLEVBQUUsR0FBRyxFQUFFO1FBQ3pFLE1BQU0sQ0FDSixlQUFlLENBQUU7WUFDZixXQUFXLEVBQUUsQ0FBQyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQUUsQ0FBQztTQUNOLENBQUMsQ0FDL0IsQ0FBQyxRQUFRLEVBQUUsQ0FBQztJQUNmLENBQUMsQ0FBQyxDQUFDO0lBQ0gsRUFBRSxDQUFDLFVBQVUsRUFBRSxHQUFHLEVBQUU7UUFDbEIsTUFBTSxDQUFDLGVBQWUsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUM3QyxDQUFDLENBQUMsQ0FBQztJQUNILEVBQUUsQ0FBQyxVQUFVLEVBQUUsR0FBRyxFQUFFO1FBQ2xCLE1BQU0sQ0FBQyxlQUFlLENBQUMsR0FBRyxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUM7SUFDN0MsQ0FBQyxDQUFDLENBQUM7QUFDTCxDQUFDLENBQUMsQ0FBQyJ9

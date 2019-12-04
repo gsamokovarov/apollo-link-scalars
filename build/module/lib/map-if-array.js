@@ -1,0 +1,9 @@
+import { isArray } from "lodash";
+/**
+ * @hidden
+ * @ignore
+ */
+export function mapIfArray(a, fn) {
+    return isArray(a) ? a.map(fn) : a;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFwLWlmLWFycmF5LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2xpYi9tYXAtaWYtYXJyYXkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLE9BQU8sRUFBRSxNQUFNLFFBQVEsQ0FBQztBQUVqQzs7O0dBR0c7QUFDSCxNQUFNLFVBQVUsVUFBVSxDQUN4QixDQUFtQixFQUNuQixFQUEyQjtJQUUzQixPQUFPLE9BQU8sQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDO0FBQ3BDLENBQUMifQ==
